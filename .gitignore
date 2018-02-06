@@ -1,3 +1,27 @@
+# mac files
+.DS_Store
+
+# dotenv environment variables file
+.env
+
+# IDE/editors
+.vscode
+.cache
+.metadata
+.settings
+
+# Optional npm cache directory
+.npm
+
+# Optional REPL history
+.node_repl_history
+
+# Optional eslint cache
+.eslintcache
+
+# Yarn Integrity file
+.yarn-integrity
+
 # Logs
 logs
 *.log
@@ -39,21 +63,31 @@ jspm_packages/
 # Typescript v1 declaration files
 typings/
 
-# Optional npm cache directory
-.npm
-
-# Optional eslint cache
-.eslintcache
-
-# Optional REPL history
-.node_repl_history
-
 # Output of 'npm pack'
 *.tgz
 
-# Yarn Integrity file
-.yarn-integrity
+# vim swap files
+*.swp
 
-# dotenv environment variables file
-.env
+# lock files
+yarn.lock
+package-lock.json
 
+# common files to not commit
+*~*
+*.bak
+Thumbs.db
+*.db
+*.zip
+*.tar
+*.tar.gz
+
+# temporary/work/output folders
+_old/
+# bin/
+build/
+dist/
+out/
+private/
+temp/
+tmp/

@@ -1,0 +1,33 @@
+{
+  "name": "fastify-favicon",
+  "version": "0.1.0",
+  "description": "A simple Fastify plugin to serve default favicon requests",
+  "main": "plugin.js",
+  "scripts": {
+    "example": "node example.js",
+    "test:unit": "standard && tap test.js",
+    "test": "npm run test:unit"
+  },
+  "dependencies": {
+    "fastify-plugin": "^0.2.1"
+  },
+  "devDependencies": {
+    "fastify": "^0.43.0",
+    "request": "^2.83.0",
+    "standard": "^10.0.3",
+    "tap": "^11.1.0"
+  },
+  "homepage": "https://github.com/smartiniOnGitHub/fastify-favicon#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smartiniOnGitHub/fastify-favicon.git"
+  },
+  "bugs": {
+    "url": "https://github.com/smartiniOnGitHub/fastify-favicon/issues"
+  },
+  "keywords": [
+    "fastify"
+  ],
+  "author": "Sandro Martini <sandro.martini@gmail.com>",
+  "license": "Apache-2.0"
+}
