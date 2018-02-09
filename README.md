@@ -27,6 +27,6 @@ Fastify 0.43.0 or later.
 
 ## License
 
-Licensed under [Apache](./LICENSE).
+Licensed under [Apache-2.0](./LICENSE).
 
 ----
