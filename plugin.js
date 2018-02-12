@@ -3,13 +3,10 @@
 const fp = require('fastify-plugin')
 
 function defaultFaviconHandler (req, reply) {
-// TODO: implement it ... wip
-  // reply.type('image/x-icon').send('test content')
   const fs = require('fs')
-  const stream = fs.createReadStream('favicon.ico', 'utf8')
-  // reply.send(stream)
+  const stream = fs.createReadStream('favicon.ico')
   reply.type('image/x-icon').send(stream)
-  // TODO: check if set type('image/x-icon') ...
+  // TODO: check if set type('image/x-icon') is good ...
 }
 
 function defaultFaviconPlugin (fastify, options, next) {
