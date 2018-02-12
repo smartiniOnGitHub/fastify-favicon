@@ -2,7 +2,7 @@
 
 const fastify = require('fastify')()
 
-fastify.register(require('./plugin'), {
+fastify.register(require('../plugin'), {
 })
 
 fastify.listen(3000, '0.0.0.0', (err) => {
