@@ -6,7 +6,6 @@ function defaultFaviconHandler (req, reply) {
   const fs = require('fs')
   const stream = fs.createReadStream('favicon.ico')
   reply.type('image/x-icon').send(stream)
-  // TODO: check if set type('image/x-icon') is good ...
 }
 
 function defaultFaviconPlugin (fastify, options, next) {
