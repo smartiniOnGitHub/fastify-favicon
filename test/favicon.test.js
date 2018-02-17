@@ -36,18 +36,14 @@ test('default favicon does not return an error, but a good response (200) and so
       t.error(err)
       t.strictEqual(response.statusCode, 200)
       t.strictEqual(response.headers['content-type'], 'image/x-icon')
-      // TODO: add check on file contents, or at least file size ... ok (but checked only file size), then remove commented code
+      // add check on file contents, or at least file size ...
       const fs = require('fs')
       const contents = fs.readFileSync('favicon.ico')
-      // console.log('file contents: ' + contents)
-      // console.log('body contents: ' + body)
       // optional, add some assertions with standard Node.js assert statements, as a sample
       const assert = require('assert')
       assert(contents !== null)
       t.ok(contents)
-      // console.log(`file size:${contents.length} , body response size:${body.length}`)
       t.strictSame(contents.length, body.length)
-      // t.strictEqual(contents, body)  // no, wrong done in this way ...
 
       fastify.close()
     })
