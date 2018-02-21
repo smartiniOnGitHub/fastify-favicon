@@ -22,7 +22,7 @@ const Fastify = require('fastify')
 test('default favicon does not return an error, but a good response (200) and some content', (t) => {
   t.plan(6)
   const fastify = Fastify()
-  fastify.register(require('../'))  // configure this plugin with its default options
+  fastify.register(require('../')) // configure this plugin with its default options
 
   fastify.listen(0, (err) => {
     fastify.server.unref()

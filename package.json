@@ -1,6 +1,6 @@
 {
   "name": "fastify-favicon",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Fastify plugin to serve default favicon requests",
   "main": "plugin.js",
   "scripts": {
@@ -15,8 +15,8 @@
   "devDependencies": {
     "fastify": "^0.43.0",
     "request": "^2.83.0",
-    "standard": "^10.0.3",
-    "tap": "^11.1.0"
+    "standard": "^11.0.0",
+    "tap": "^11.1.1"
   },
   "homepage": "https://github.com/smartiniOnGitHub/fastify-favicon#readme",
   "repository": {
