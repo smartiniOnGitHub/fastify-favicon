@@ -1,6 +1,11 @@
 # Change Log
 
-## [0.1.1](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/0.1.0) (2018-02-21)
+## [0.1.2](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/0.1.2) (2018-02-22)
+[Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/0.1.1...0.1.2)
+Summary Changelog:
+- Small optimization to not calculate path at every request
+
+## [0.1.1](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/0.1.1) (2018-02-21)
 [Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/0.1.0...0.1.1)
 Summary Changelog:
 - Fix Issue#1, 'Unable to serve favicon.ico' (when using the plugin from a real project)
