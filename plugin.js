@@ -16,11 +16,11 @@
 'use strict'
 
 const fp = require('fastify-plugin')
+const path = require('path')
+const scriptRelativeFolder = path.join(__dirname, path.sep)
+const fs = require('fs')
 
 function defaultFaviconHandler (req, reply) {
-  const path = require('path')
-  const scriptRelativeFolder = path.join(__dirname, path.sep)
-  const fs = require('fs')
   const stream = fs.createReadStream(path.join(scriptRelativeFolder, 'favicon.ico'))
   reply.type('image/x-icon').send(stream)
 }
