@@ -12,9 +12,8 @@ const fastify = require('fastify')()
 // example without specifying options, returning a default favicon
 fastify.register(require('fastify-favicon'))
 // or
-// TODO: future use ...
 // example with custom URL
-// fastify.register(require('fastify-favicon') {'favicon': '/path/to/favicon.ico'})
+fastify.register(require('fastify-favicon') {path: '/path/where/favicon/served'})
 
 fastify.listen(3000)
 // curl 127.0.0.1:3000/favicon.ico => returning the image, and no thrown error

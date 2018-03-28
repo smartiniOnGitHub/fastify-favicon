@@ -20,12 +20,25 @@ const path = require('path')
 const scriptRelativeFolder = path.join(__dirname, path.sep)
 const fs = require('fs')
 
+const opts = {
+  path: ''
+}
+
 function defaultFaviconHandler (req, reply) {
-  const stream = fs.createReadStream(path.join(scriptRelativeFolder, 'favicon.ico'))
-  reply.type('image/x-icon').send(stream)
+  const icon = path.join(opts.path, 'favicon.ico')
+  fs.readFile(icon, (err, data) => {
+    let stream
+    if (err && err.code === 'ENOENT') {
+      stream = fs.createReadStream(path.join(scriptRelativeFolder, 'favicon.ico'))
+    } else {
+      stream = fs.createReadStream(icon)
+    }
+    reply.type('image/x-icon').send(stream)
+  })
 }
 
 function defaultFaviconPlugin (fastify, options, next) {
+  opts.path = options.path || opts.path
   fastify.get('/favicon.ico', defaultFaviconHandler)
   next()
 }
