@@ -52,4 +52,36 @@ test('default favicon does not return an error, but a good response (200) and so
 
 // TODO: add test to check error code when returning a not-existing favicon ...
 
-// TODO: add a test to return a favicon configured in a custom path (but provided here as example/test resources) ...
+test('return a favicon configured in a custom path', (t) => {
+  t.plan(6)
+  const path = './test'
+  const fastify = Fastify()
+  fastify.register(require('../'), {
+    path
+  })
+
+  fastify.listen(0, (err) => {
+    fastify.server.unref()
+    t.error(err)
+    const port = fastify.server.address().port
+
+    request({
+      method: 'GET',
+      uri: `http://localhost:${port}/favicon.ico`
+    }, (err, response, body) => {
+      t.error(err)
+      t.strictEqual(response.statusCode, 200)
+      t.strictEqual(response.headers['content-type'], 'image/x-icon')
+      // add check on file contents, or at least file size ...
+      const fs = require('fs')
+      const contents = fs.readFileSync(path + '/favicon.ico')
+      // optional, add some assertions with standard Node.js assert statements, as a sample
+      const assert = require('assert')
+      assert(contents !== null)
+      t.ok(contents)
+      t.strictSame(contents.length, body.length)
+
+      fastify.close()
+    })
+  })
+})
