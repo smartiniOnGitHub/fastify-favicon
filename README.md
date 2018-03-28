@@ -9,7 +9,7 @@ With this plugin, Fastify will have a route configured for `/favicon.ico` reques
 ```js
 const fastify = require('fastify')()
 
-// example without specifying options, returning a default favicon
+// example without specifying options, searching favicon.ico from project root, otherwise returning a default favicon
 fastify.register(require('fastify-favicon'))
 // or
 // example with custom URL
