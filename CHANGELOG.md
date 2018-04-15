@@ -1,5 +1,11 @@
 # Change Log
 
+## [0.2.1](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/0.2.0) (2018-04-15)
+[Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/0.2.0...0.2.1)
+Summary Changelog:
+- Update dependencies (and cleaned up 'peerDependencies')
+- For now stay on Fastify 0.43.x, but note that next release will be for Fastify 1.2.1 or later
+
 ## [0.2.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/0.2.0) (2018-03-28)
 [Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/0.1.2...0.2.0)
 Summary Changelog:
