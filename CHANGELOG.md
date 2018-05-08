@@ -1,6 +1,11 @@
 # Change Log
 
-## [0.2.1](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/0.2.0) (2018-04-15)
+## [0.2.2](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/0.2.2) (2018-05-08)
+[Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/0.2.1...0.2.2)
+Summary Changelog:
+- Fix type in README
+
+## [0.2.1](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/0.2.1) (2018-04-15)
 [Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/0.2.0...0.2.1)
 Summary Changelog:
 - Update dependencies (and cleaned up 'peerDependencies')
