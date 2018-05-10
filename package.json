@@ -2,9 +2,9 @@
   "name": "fastify-favicon",
   "version": "0.2.2",
   "description": "Fastify plugin to serve default favicon requests",
-  "main": "plugin.js",
+  "main": "plugin",
   "scripts": {
-    "example": "node example/example.js",
+    "example": "node example/example",
     "lint": "standard",
     "test:unit": "tap test/*.test.js test/*/*.test.js",
     "test": "npm run lint && npm run test:unit"
@@ -16,7 +16,7 @@
     "fastify": "^0.43.0",
     "request": "^2.85.0",
     "standard": "^11.0.1",
-    "tap": "^11.1.4"
+    "tap": "^11.1.5"
   },
   "peerDependencies": {},
   "homepage": "https://github.com/smartiniOnGitHub/fastify-favicon#readme",
