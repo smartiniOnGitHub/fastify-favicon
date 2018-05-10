@@ -50,14 +50,12 @@ test('default favicon does not return an error, but a good response (200) and so
   })
 })
 
-// TODO: add test to check error code when returning a not-existing favicon ...
-
 test('return a favicon configured in a custom path', (t) => {
   t.plan(6)
   const path = './test'
   const fastify = Fastify()
   fastify.register(require('../'), {
-    path
+    path: path
   })
 
   fastify.listen(0, (err) => {

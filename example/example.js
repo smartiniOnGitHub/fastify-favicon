@@ -18,6 +18,14 @@
 const fastify = require('fastify')()
 
 fastify.register(require('../plugin'), {
+  // some examples of custom path (optional)
+  // path: 'test' // relative to project root // ok
+  // path: './test' // relative to project root // ok
+  // path: '../fastify-favicon/test' // relative to project root with folder change // ok
+  // path: '../fastify-favicon/test/' // relative to project root with folder change and final slash // ok
+  // path: '/test' // absolute but dependent on project root // no, doen't work
+  // path: '/work/fastify-favicon/test' // absolute (full path) // ok, but not recommended
+  // path: '../fastify-favicon/test-bad' // example with bad path, to let the plugin write a warning in logs
 })
 
 // example to handle a sample home request to serve a static page, optional here
