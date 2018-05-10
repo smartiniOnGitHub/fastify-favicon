@@ -29,6 +29,7 @@ function defaultFaviconHandler (req, reply) {
   fs.readFile(icon, (err, data) => {
     let stream
     if (err && err.code === 'ENOENT') {
+      // TODO: check if write a warning in fastify logs ...
       stream = fs.createReadStream(path.join(scriptRelativeFolder, 'favicon.ico'))
     } else {
       stream = fs.createReadStream(icon)
