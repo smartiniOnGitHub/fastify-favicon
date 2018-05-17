@@ -24,24 +24,24 @@ const opts = {
   path: ''
 }
 
-function defaultFaviconHandler (req, reply) {
-  const icon = path.join(opts.path, 'favicon.ico')
-  fs.readFile(icon, (err, data) => {
-    let stream
-    if (err && err.code === 'ENOENT') {
-      // TODO: check if write a warning in fastify logs ...
-      stream = fs.createReadStream(path.join(scriptRelativeFolder, 'favicon.ico'))
-    } else {
-      stream = fs.createReadStream(icon)
-    }
-    reply.type('image/x-icon').send(stream)
-  })
-}
-
 function defaultFaviconPlugin (fastify, options, next) {
   opts.path = options.path || opts.path
   fastify.get('/favicon.ico', defaultFaviconHandler)
   next()
+
+  function defaultFaviconHandler (req, reply) {
+    const icon = path.join(opts.path, 'favicon.ico')
+    fs.readFile(icon, (err, data) => {
+      let stream
+      if (err && err.code === 'ENOENT') {
+        fastify.log.warn(`Custom favicon '${icon}' not found, serving the default one`)
+        stream = fs.createReadStream(path.join(scriptRelativeFolder, 'favicon.ico'))
+      } else {
+        stream = fs.createReadStream(icon)
+      }
+      reply.type('image/x-icon').send(stream)
+    })
+  }
 }
 
 module.exports = fp(defaultFaviconPlugin, {

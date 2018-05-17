@@ -25,7 +25,7 @@ fastify.register(require('../plugin'), {
   // path: '../fastify-favicon/test/' // relative to project root with folder change and final slash // ok
   // path: '/test' // absolute but dependent on project root // no, doen't work
   // path: '/work/fastify-favicon/test' // absolute (full path) // ok, but not recommended
-  // path: '../fastify-favicon/test-bad' // example with bad path, to let the plugin write a warning in logs
+  // path: '../fastify-favicon/test-bad' // example with bad path, to let the plugin write a warning in logs (but logs must be enabled in Fastify options)
 })
 
 // example to handle a sample home request to serve a static page, optional here

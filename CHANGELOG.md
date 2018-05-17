@@ -1,6 +1,6 @@
 # Change Log
 
-## [0.2.3](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/0.2.3) (2018-05-xx)
+## [0.2.3](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/0.2.3) (2018-05-17)
 [Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/0.2.2...0.2.3)
 Summary Changelog:
 - Custom path for favicon: write a warning in Fastify log when using a custom path is not found (so the default one bundled with the plugin is served)
