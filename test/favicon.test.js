@@ -85,3 +85,39 @@ test('return a favicon configured in a custom path', (t) => {
     })
   })
 })
+
+test('return default favicon because that in the custom path is not found', (t) => {
+  t.plan(6)
+  const path = './test/img' // path that here does not exist, good for this test
+  const defaultPath = '.'
+  const fastify = Fastify()
+  fastify.register(require('../'), {
+    path: path
+  })
+
+  fastify.listen(0, (err) => {
+    fastify.server.unref()
+    t.error(err)
+    const port = fastify.server.address().port
+
+    sget({
+      method: 'GET',
+      timeout: 2000,
+      url: `http://localhost:${port}/favicon.ico`
+    }, (err, response, body) => {
+      t.error(err)
+      t.strictEqual(response.statusCode, 200)
+      t.strictEqual(response.headers['content-type'], 'image/x-icon')
+      // add check on file contents, or at least file size ...
+      const fs = require('fs')
+      const contents = fs.readFileSync(defaultPath + '/favicon.ico')
+      // optional, add some assertions with standard Node.js assert statements, as a sample
+      const assert = require('assert')
+      assert(contents !== null)
+      t.ok(contents)
+      t.strictSame(contents.length, body.length)
+
+      fastify.close()
+    })
+  })
+})
