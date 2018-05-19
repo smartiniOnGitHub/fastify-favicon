@@ -1,9 +1,10 @@
 # Change Log
 
-## [0.2.4](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/0.2.4) (2018-05-xx)
+## [0.2.4](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/0.2.4) (2018-05-19)
 [Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/0.2.3...0.2.4)
 Summary Changelog:
 - Like in Fastify and core plugins, change dev dependency from 'request' to 'simple-get'
+- Custom path for favicon: add a test to ensure that when is not found the default favicon (bundled with the plugin) is served
 
 ## [0.2.3](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/0.2.3) (2018-05-17)
 [Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/0.2.2...0.2.3)
