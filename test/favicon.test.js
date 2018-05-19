@@ -16,7 +16,7 @@
 'use strict'
 
 const test = require('tap').test
-const request = require('request')
+const sget = require('simple-get').concat
 const Fastify = require('fastify')
 
 test('default favicon does not return an error, but a good response (200) and some content', (t) => {
@@ -29,9 +29,10 @@ test('default favicon does not return an error, but a good response (200) and so
     t.error(err)
     const port = fastify.server.address().port
 
-    request({
+    sget({
       method: 'GET',
-      uri: `http://localhost:${port}/favicon.ico`
+      timeout: 2000,
+      url: `http://localhost:${port}/favicon.ico`
     }, (err, response, body) => {
       t.error(err)
       t.strictEqual(response.statusCode, 200)
@@ -63,9 +64,10 @@ test('return a favicon configured in a custom path', (t) => {
     t.error(err)
     const port = fastify.server.address().port
 
-    request({
+    sget({
       method: 'GET',
-      uri: `http://localhost:${port}/favicon.ico`
+      timeout: 2000,
+      url: `http://localhost:${port}/favicon.ico`
     }, (err, response, body) => {
       t.error(err)
       t.strictEqual(response.statusCode, 200)

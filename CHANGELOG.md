@@ -1,5 +1,10 @@
 # Change Log
 
+## [0.2.4](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/0.2.4) (2018-05-xx)
+[Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/0.2.3...0.2.4)
+Summary Changelog:
+- Like in Fastify and core plugins, change dev dependency from 'request' to 'simple-get'
+
 ## [0.2.3](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/0.2.3) (2018-05-17)
 [Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/0.2.2...0.2.3)
 Summary Changelog:
