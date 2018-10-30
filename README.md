@@ -1,4 +1,10 @@
 # fastify-favicon
+
+  [![NPM Version](https://img.shields.io/npm/v/fastify-favicon.svg?style=flat)](https://npmjs.org/package/fastify-favicon/)
+  [![NPM Downloads](https://img.shields.io/npm/dm/fastify-favicon.svg?style=flat)](https://npmjs.org/package/fastify-favicon/)
+  [![Code Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
+  [![Coverage Status](https://coveralls.io/repos/github/smartiniOnGitHub/fastify-favicon/badge.svg?branch=master)](https://coveralls.io/github/smartiniOnGitHub/fastify-favicon/?branch=master)
+
 Fastify Plugin to serve default favicon.
 
 With this plugin, Fastify will have a route configured for `/favicon.ico` requests.
