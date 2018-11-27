@@ -21,25 +21,25 @@ const Fastify = require('fastify')
 
 test('default favicon does not return an error, but a good response (200) and some content', (t) => {
   t.plan(6)
+  const defaultPath = './src'
   const fastify = Fastify()
   fastify.register(require('../')) // configure this plugin with its default options
 
-  fastify.listen(0, (err) => {
+  fastify.listen(0, (err, address) => {
     fastify.server.unref()
     t.error(err)
-    const port = fastify.server.address().port
 
     sget({
       method: 'GET',
       timeout: 2000,
-      url: `http://localhost:${port}/favicon.ico`
+      url: `${address}/favicon.ico`
     }, (err, response, body) => {
       t.error(err)
       t.strictEqual(response.statusCode, 200)
       t.strictEqual(response.headers['content-type'], 'image/x-icon')
       // add check on file contents, or at least file size ...
       const fs = require('fs')
-      const contents = fs.readFileSync('favicon.ico')
+      const contents = fs.readFileSync(defaultPath + '/favicon.ico')
       // optional, add some assertions with standard Node.js assert statements, as a sample
       const assert = require('assert')
       assert(contents !== null)
@@ -59,15 +59,14 @@ test('return a favicon configured in a custom path', (t) => {
     path: path
   })
 
-  fastify.listen(0, (err) => {
+  fastify.listen(0, (err, address) => {
     fastify.server.unref()
     t.error(err)
-    const port = fastify.server.address().port
 
     sget({
       method: 'GET',
       timeout: 2000,
-      url: `http://localhost:${port}/favicon.ico`
+      url: `${address}/favicon.ico`
     }, (err, response, body) => {
       t.error(err)
       t.strictEqual(response.statusCode, 200)
@@ -89,21 +88,20 @@ test('return a favicon configured in a custom path', (t) => {
 test('return default favicon because that in the custom path is not found', (t) => {
   t.plan(6)
   const path = './test/img' // path that here does not exist, good for this test
-  const defaultPath = '.'
+  const defaultPath = './src'
   const fastify = Fastify()
   fastify.register(require('../'), {
     path: path
   })
 
-  fastify.listen(0, (err) => {
+  fastify.listen(0, (err, address) => {
     fastify.server.unref()
     t.error(err)
-    const port = fastify.server.address().port
 
     sget({
       method: 'GET',
       timeout: 2000,
-      url: `http://localhost:${port}/favicon.ico`
+      url: `${address}/favicon.ico`
     }, (err, response, body) => {
       t.error(err)
       t.strictEqual(response.statusCode, 200)
