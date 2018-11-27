@@ -27,10 +27,9 @@ const opts = {
 function defaultFaviconPlugin (fastify, options, next) {
   opts.path = options.path || opts.path
   fastify.get('/favicon.ico', defaultFaviconHandler)
-  next()
+  const icon = path.join(opts.path, 'favicon.ico')
 
   function defaultFaviconHandler (req, reply) {
-    const icon = path.join(opts.path, 'favicon.ico')
     fs.readFile(icon, (err, data) => {
       let stream
       if (err && err.code === 'ENOENT') {
@@ -42,9 +41,11 @@ function defaultFaviconPlugin (fastify, options, next) {
       reply.type('image/x-icon').send(stream)
     })
   }
+
+  next()
 }
 
 module.exports = fp(defaultFaviconPlugin, {
-  fastify: '>=0.43.0',
+  fastify: '^1.1.0',
   name: 'fastify-favicon'
 })
