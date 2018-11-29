@@ -28,7 +28,7 @@ fastify.listen(3000)
 ## Requirements
 
 Fastify ^1.1.0 .
-Node.js 8.12.x or later.
+Node.js 8.14.x or later.
 
 
 ## Note
