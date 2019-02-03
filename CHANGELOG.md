@@ -1,5 +1,12 @@
 # Change Log
 
+## [0.3.1](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/0.3.1) (2019-02-03)
+[Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/0.3.0...0.3.1)
+Summary Changelog:
+- Update dependency on 'fastify-plugin' to '^1.4.0'
+- Update all dependencies to latest
+- Update Tap tests
+
 ## [0.3.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/0.3.0) (2018-11-28)
 [Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/0.2.4...0.3.0)
 Summary Changelog:
