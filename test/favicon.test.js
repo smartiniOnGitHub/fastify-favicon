@@ -23,10 +23,11 @@ test('default favicon does not return an error, but a good response (200) and so
   t.plan(6)
   const defaultPath = './src'
   const fastify = Fastify()
+  t.tearDown(fastify.close.bind(fastify))
+
   fastify.register(require('../')) // configure this plugin with its default options
 
   fastify.listen(0, (err, address) => {
-    fastify.server.unref()
     t.error(err)
 
     sget({
@@ -45,8 +46,6 @@ test('default favicon does not return an error, but a good response (200) and so
       assert(contents !== null)
       t.ok(contents)
       t.strictSame(contents.length, body.length)
-
-      fastify.close()
     })
   })
 })
@@ -55,12 +54,12 @@ test('return a favicon configured in a custom path', (t) => {
   t.plan(6)
   const path = './test'
   const fastify = Fastify()
+  t.tearDown(fastify.close.bind(fastify))
   fastify.register(require('../'), {
     path: path
   })
 
   fastify.listen(0, (err, address) => {
-    fastify.server.unref()
     t.error(err)
 
     sget({
@@ -79,8 +78,6 @@ test('return a favicon configured in a custom path', (t) => {
       assert(contents !== null)
       t.ok(contents)
       t.strictSame(contents.length, body.length)
-
-      fastify.close()
     })
   })
 })
@@ -90,12 +87,12 @@ test('return default favicon because that in the custom path is not found', (t) 
   const path = './test/img' // path that here does not exist, good for this test
   const defaultPath = './src'
   const fastify = Fastify()
+  t.tearDown(fastify.close.bind(fastify))
   fastify.register(require('../'), {
     path: path
   })
 
   fastify.listen(0, (err, address) => {
-    fastify.server.unref()
     t.error(err)
 
     sget({
@@ -114,8 +111,6 @@ test('return default favicon because that in the custom path is not found', (t) 
       assert(contents !== null)
       t.ok(contents)
       t.strictSame(contents.length, body.length)
-
-      fastify.close()
     })
   })
 })
