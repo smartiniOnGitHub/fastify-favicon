@@ -15,6 +15,9 @@ private/
 tmp/
 temp/
 
+coverage/
+.nyc_output
+
 scripts/
 src/
 test/
@@ -31,6 +34,7 @@ test/
 .eslintignore
 .eslintrc*
 .eslintcache
+.esdoc.json
 .yarn-integrity
 
 .editorconfig
