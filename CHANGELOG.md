@@ -1,5 +1,12 @@
 # Change Log
 
+## [1.0.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/1.0.0) (2019-02-27)
+[Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/0.3.3...1.0.0)
+Summary Changelog:
+- Updated all dependencies
+- Note that this release number means that the plugin is stable, 
+  and for Fastify v1
+
 ## [0.3.2](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/0.3.2) (2019-02-14)
 [Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/0.3.1...0.3.2)
 Summary Changelog:

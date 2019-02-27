@@ -28,6 +28,8 @@ fastify.listen(3000)
 ## Requirements
 
 Fastify ^1.1.0 , Node.js 8.15.x or later.
+Note that plugin releases 0.x and 1.x are for Fastify 1.x, 
+plugin releases 2.x are for Fastify 2.x, etc.
 
 
 ## Note
