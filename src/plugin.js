@@ -46,6 +46,6 @@ function defaultFaviconPlugin (fastify, options, next) {
 }
 
 module.exports = fp(defaultFaviconPlugin, {
-  fastify: '^1.1.0',
+  fastify: '^2.0.0',
   name: 'fastify-favicon'
 })
