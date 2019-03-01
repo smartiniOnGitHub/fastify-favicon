@@ -1,6 +1,6 @@
 {
   "name": "fastify-favicon",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Fastify plugin to serve default favicon requests",
   "main": "src/plugin",
   "scripts": {
@@ -13,7 +13,7 @@
     "fastify-plugin": "^1.5.0"
   },
   "devDependencies": {
-    "fastify": "^1.14.2",
+    "fastify": "^2.0.0",
     "simple-get": "^3.0.3",
     "standard": "^12.0.1",
     "tap": "^12.5.3"
