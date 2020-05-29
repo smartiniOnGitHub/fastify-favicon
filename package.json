@@ -3,6 +3,7 @@
   "version": "2.0.0",
   "description": "Fastify plugin to serve default favicon requests",
   "main": "src/plugin",
+  "types": "src/plugin.d.ts",
   "scripts": {
     "example": "node example/example",
     "lint": "standard",
