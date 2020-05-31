@@ -1,7 +1,7 @@
 import * as fastify from 'fastify';
 import * as http from 'http';
 
-interface FastifyFaviconOptions {
+export interface FastifyFaviconOptions {
     path?: string;
 }
 
@@ -12,4 +12,4 @@ declare const fastifyFavicon: fastify.Plugin<
     FastifyFaviconOptions
 >;
 
-export = fastifyFavicon;
+export default fastifyFavicon;
