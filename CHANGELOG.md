@@ -1,5 +1,12 @@
 # Change Log
 
+## [2.1.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/2.1.0) (unreleased)
+[Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/2.0.0...2.1.0)
+Summary Changelog:
+- Updated requirements to Fastify '^2.12.0' (as dev dependency)
+- Updated all dependencies to latest
+- Add TypeScript types
+
 ## [2.0.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/2.0.0) (2019-03-01)
 [Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/1.0.0...2.0.0)
 Summary Changelog:
