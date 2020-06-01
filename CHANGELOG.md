@@ -1,6 +1,6 @@
 # Change Log
 
-## [2.1.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/2.1.0) (unreleased)
+## [2.1.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/2.1.0) (2020-06-01)
 [Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/2.0.0...2.1.0)
 Summary Changelog:
 - Updated requirements to Fastify '^2.12.0' (as dev dependency)
