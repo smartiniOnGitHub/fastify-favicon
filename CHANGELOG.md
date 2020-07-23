@@ -1,6 +1,6 @@
 # Change Log
 
-## [3.0.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/3.0.0) (unreleased)
+## [3.0.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/3.0.0) (2020-07-23)
 [Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/2.1.0...3.0.0)
 Summary Changelog:
 - Updated requirements to Fastify '^3.0.0' (as dev dependency)
