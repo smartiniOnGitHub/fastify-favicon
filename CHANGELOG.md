@@ -1,5 +1,12 @@
 # Change Log
 
+## [3.0.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/3.0.0) (unreleased)
+[Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/2.1.0...3.0.0)
+Summary Changelog:
+- Updated requirements to Fastify '^3.0.0' (as dev dependency)
+- Updated all dependencies to latest
+- Update TypeScript types
+
 ## [2.1.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/2.1.0) (2020-06-01)
 [Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/2.0.0...2.1.0)
 Summary Changelog:

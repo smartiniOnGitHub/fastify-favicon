@@ -29,9 +29,8 @@ fastify.listen(3000)
 
 ## Requirements
 
-Fastify ^2.12.0 , Node.js 8.16.x or later.
-Note that plugin releases 0.x and 1.x are for Fastify 1.x, 
-plugin releases 2.x are for Fastify 2.x, etc.
+Fastify ^3.0.0 , Node.js 10.13.x or later.
+Note that plugin releases 2.x are for Fastify 2.x, 3.x are for Fastify 3.x, etc.
 
 
 ## Note
