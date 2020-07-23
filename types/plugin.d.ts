@@ -1,15 +1,10 @@
-import * as fastify from 'fastify'
-import * as http from 'http'
+/// <reference types="node" />
+
+import { FastifyPlugin } from 'fastify'
 
 export interface FastifyFaviconOptions {
-  path?: string;
+  path?: string
 }
 
-declare const fastifyFavicon: fastify.Plugin<
-http.Server,
-http.IncomingMessage,
-http.ServerResponse,
-FastifyFaviconOptions
->
-
+declare const fastifyFavicon: FastifyPlugin<FastifyFaviconOptions>
 export default fastifyFavicon
