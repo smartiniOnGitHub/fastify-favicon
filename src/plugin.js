@@ -21,13 +21,15 @@ const scriptRelativeFolder = path.join(__dirname, path.sep)
 const fs = require('fs')
 
 const opts = {
-  path: ''
+  path: '',
+  name: 'favicon.ico'
 }
 
 function defaultFaviconPlugin (fastify, options, next) {
   opts.path = options.path || opts.path
+  opts.name = options.name || opts.name
   fastify.get('/favicon.ico', defaultFaviconHandler)
-  const icon = path.join(opts.path, 'favicon.ico')
+  const icon = path.join(opts.path, opts.name)
 
   function defaultFaviconHandler (req, reply) {
     fs.readFile(icon, (err, data) => {
