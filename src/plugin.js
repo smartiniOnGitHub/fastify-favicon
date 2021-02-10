@@ -16,27 +16,30 @@
 'use strict'
 
 const fp = require('fastify-plugin')
-const path = require('path')
-const scriptRelativeFolder = path.join(__dirname, path.sep)
+const pn = require('path')
+const scriptRelativeFolder = pn.join(__dirname, pn.sep)
 const fs = require('fs')
 
-const opts = {
-  path: '',
-  name: 'favicon.ico'
-}
+const iconNameDefault = 'favicon.ico'
 
-function defaultFaviconPlugin (fastify, options, next) {
-  opts.path = options.path || opts.path
-  opts.name = options.name || opts.name
-  fastify.get('/favicon.ico', defaultFaviconHandler)
-  const icon = path.join(opts.path, opts.name)
+function fastifyFavicon (fastify, options, next) {
+  const {
+    path = '',
+    name = iconNameDefault
+  } = options
+
+  ensureIsString(path, 'iconPath')
+  ensureIsString(name, 'iconName')
+
+  fastify.get(`/${name}`, defaultFaviconHandler)
+  const icon = pn.join(path, name)
 
   function defaultFaviconHandler (req, reply) {
     fs.readFile(icon, (err, data) => {
       let stream
       if (err && err.code === 'ENOENT') {
         fastify.log.warn(`Custom favicon '${icon}' not found, serving the default one`)
-        stream = fs.createReadStream(path.join(scriptRelativeFolder, 'favicon.ico'))
+        stream = fs.createReadStream(pn.join(scriptRelativeFolder, iconNameDefault))
       } else {
         stream = fs.createReadStream(icon)
       }
@@ -47,7 +50,13 @@ function defaultFaviconPlugin (fastify, options, next) {
   next()
 }
 
-module.exports = fp(defaultFaviconPlugin, {
+function ensureIsString (arg, name) {
+  if (arg !== null && typeof arg !== 'string') {
+    throw new TypeError(`The argument '${name}' must be a string, instead got a '${typeof arg}'`)
+  }
+}
+
+module.exports = fp(fastifyFavicon, {
   fastify: '3.x',
   name: 'fastify-favicon'
 })

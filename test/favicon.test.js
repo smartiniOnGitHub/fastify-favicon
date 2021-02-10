@@ -40,7 +40,7 @@ test('default favicon does not return an error, but a good response (200) and so
       t.strictEqual(response.headers['content-type'], 'image/x-icon')
       // add check on file contents, or at least file size ...
       const fs = require('fs')
-      const contents = fs.readFileSync(defaultPath + '/favicon.ico')
+      const contents = fs.readFileSync(`${defaultPath}/favicon.ico`)
       // optional, add some assertions with standard Node.js assert statements, as a sample
       const assert = require('assert')
       assert(contents !== null)
@@ -52,11 +52,11 @@ test('default favicon does not return an error, but a good response (200) and so
 
 test('return a favicon configured in a custom path', (t) => {
   t.plan(6)
-  const path = './test'
+  const pathSample = './test'
   const fastify = Fastify()
   t.tearDown(fastify.close.bind(fastify))
   fastify.register(require('../'), {
-    path: path
+    path: pathSample
   })
 
   fastify.listen(0, (err, address) => {
@@ -72,7 +72,7 @@ test('return a favicon configured in a custom path', (t) => {
       t.strictEqual(response.headers['content-type'], 'image/x-icon')
       // add check on file contents, or at least file size ...
       const fs = require('fs')
-      const contents = fs.readFileSync(path + '/favicon.ico')
+      const contents = fs.readFileSync(`${pathSample}/favicon.ico`)
       // optional, add some assertions with standard Node.js assert statements, as a sample
       const assert = require('assert')
       assert(contents !== null)
@@ -84,12 +84,12 @@ test('return a favicon configured in a custom path', (t) => {
 
 test('return default favicon because that in the custom path is not found', (t) => {
   t.plan(6)
-  const path = './test/img' // path that here does not exist, good for this test
+  const pathSample = './test/not-existing-img-path' // path that here does not exist, good for this test
   const defaultPath = './src'
   const fastify = Fastify()
   t.tearDown(fastify.close.bind(fastify))
   fastify.register(require('../'), {
-    path: path
+    path: pathSample
   })
 
   fastify.listen(0, (err, address) => {
@@ -105,7 +105,7 @@ test('return default favicon because that in the custom path is not found', (t) 
       t.strictEqual(response.headers['content-type'], 'image/x-icon')
       // add check on file contents, or at least file size ...
       const fs = require('fs')
-      const contents = fs.readFileSync(defaultPath + '/favicon.ico')
+      const contents = fs.readFileSync(`${defaultPath}/favicon.ico`)
       // optional, add some assertions with standard Node.js assert statements, as a sample
       const assert = require('assert')
       assert(contents !== null)
