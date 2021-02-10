@@ -6,29 +6,34 @@
   "types": "types/plugin.d.ts",
   "scripts": {
     "example": "node example/example",
-    "lint": "standard",
-    "lint:types": "standardx \"./types/**/*.ts\"",
-    "lint:types:fix": "standardx \"./types/**/*.ts\" --fix",
-    "test:types": "tsd && tsc --p ./types",
-    "test:unit": "tap -J --comments --no-esm --strict test/*.test.js",
-    "test:unit:debug": "tap -T --node-arg=--inspect-brk --comments --no-esm --strict test/*.test.js",
-    "test:unit:dev": "tap -J --comments --no-esm --strict --watch test/*.test.js",
-    "test": "npm run lint && npm run lint:types && npm run test:types && npm run test:unit"
+    "lint": "npm run lint:standard && npm run lint:typescript",
+    "lint:fix": "standard --fix",
+    "lint:standard": "standard --verbose",
+    "lint:typescript": "eslint -c types/.eslintrc.json types/*.d.ts types/*.test-d.ts",
+    "test:types": "tsd",
+    "test:unit": "tap test/*.test.js",
+    "test:unit:debug": "tap -T --node-arg=--inspect-brk test/*.test.js",
+    "test:unit:dev": "tap --watch --cov test/*.test.js",
+    "test": "npm run lint:standard && npm run lint:typescript && npm run test:types && npm run test:unit"
   },
   "dependencies": {
-    "fastify-plugin": "^2.0.1"
+    "fastify-plugin": "^3.0.0"
   },
   "devDependencies": {
-    "@types/node": "^14.0.24",
-    "@typescript-eslint/eslint-plugin": "^3.7.0",
-    "@typescript-eslint/parser": "^3.7.0",
+    "@types/node": "^14.14.25",
+    "@typescript-eslint/eslint-plugin": "^4.15.0",
+    "@typescript-eslint/parser": "^4.15.0",
     "fastify": "^3.0.0",
     "simple-get": "^4.0.0",
-    "standard": "^14.3.4",
-    "standardx": "^5.0.0",
-    "tap": "^14.10.8",
-    "tsd": "^0.13.1",
-    "typescript": "^3.9.7"
+    "standard": "^16.0.3",
+    "tap": "^14.11.0",
+    "tsd": "^0.14.0",
+    "typescript": "^4.1.4"
+  },
+  "standard": {
+    "ignore": [
+      "types/*"
+    ]
   },
   "tsd": {
     "directory": "types",
@@ -36,12 +41,6 @@
       "esModuleInterop": true,
       "strict": true
     }
-  },
-  "standardx": {
-    "parser": "@typescript-eslint/parser",
-    "plugins": [
-      "@typescript-eslint/eslint-plugin"
-    ]
   },
   "peerDependencies": {},
   "engines": {
