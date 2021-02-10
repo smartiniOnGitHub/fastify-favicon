@@ -1,11 +1,12 @@
 # Change Log
 
-## [3.1.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/3.1.0) (unreleased)
+## [3.1.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/3.1.0) (2021-02-10)
 [Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/3.0.0...3.1.0)
 Summary Changelog:
 - Updated all dependencies to latest
 - Update TypeScript types
-- Add option to spoecify favicon file name
+- Update code to more modern JavaScript
+- Add option to specify favicon file name
 
 ## [3.0.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/3.0.0) (2020-07-23)
 [Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/2.1.0...3.0.0)
