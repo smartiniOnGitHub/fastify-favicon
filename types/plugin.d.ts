@@ -1,10 +1,11 @@
 /// <reference types="node" />
 
-import { FastifyPlugin } from 'fastify'
+import { FastifyPluginCallback } from 'fastify'
 
 export interface FastifyFaviconOptions {
   path?: string
+  name?: string
 }
 
-declare const fastifyFavicon: FastifyPlugin<FastifyFaviconOptions>
+declare const fastifyFavicon: FastifyPluginCallback<FastifyFaviconOptions>
 export default fastifyFavicon
