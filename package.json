@@ -1,6 +1,6 @@
 {
   "name": "fastify-favicon",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Fastify plugin to serve default favicon requests",
   "main": "src/plugin",
   "types": "types/plugin.d.ts",
