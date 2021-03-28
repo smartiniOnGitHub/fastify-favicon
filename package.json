@@ -5,11 +5,18 @@
   "main": "src/plugin",
   "types": "types/plugin.d.ts",
   "scripts": {
+    "dependency:log": "npm list > ./temp/dependencies.log",
+    "docs:clean": "rm -rf ./out/*",
+    "docs:generate": "npx jsdoc -c .jsdoc.json -R README.md",
+    "docs": "npm run docs:clean && npm run docs:generate",
     "example": "node example/example",
     "lint": "npm run lint:standard && npm run lint:typescript",
     "lint:fix": "standard --fix",
     "lint:standard": "standard --verbose",
     "lint:typescript": "eslint -c types/.eslintrc.json types/*.d.ts types/*.test-d.ts",
+    "test:clean": "rm -rf .nyc_output/* ./coverage/*",
+    "test:coverage": "npm run test:unit -- --cov --coverage-report=html",
+    "test:coverage:all": "npm run test:unit --  --cov",
     "test:types": "tsd",
     "test:unit": "tap test/*.test.js",
     "test:unit:debug": "tap -T --node-arg=--inspect-brk test/*.test.js",
@@ -20,15 +27,16 @@
     "fastify-plugin": "^3.0.0"
   },
   "devDependencies": {
-    "@types/node": "^14.14.25",
-    "@typescript-eslint/eslint-plugin": "^4.15.0",
-    "@typescript-eslint/parser": "^4.15.0",
+    "@types/node": "^14.14.37",
+    "@typescript-eslint/eslint-plugin": "^4.19.0",
+    "@typescript-eslint/parser": "^4.19.0",
+    "jsdoc": "^3.6.6",
     "fastify": "^3.0.0",
     "simple-get": "^4.0.0",
     "standard": "^16.0.3",
     "tap": "^14.11.0",
     "tsd": "^0.14.0",
-    "typescript": "^4.1.4"
+    "typescript": "^4.2.3"
   },
   "standard": {
     "ignore": [
