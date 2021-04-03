@@ -36,8 +36,8 @@ test('default favicon does not return an error, but a good response (200) and so
       url: `${address}/favicon.ico`
     }, (err, response, body) => {
       t.error(err)
-      t.strictEqual(response.statusCode, 200)
-      t.strictEqual(response.headers['content-type'], 'image/x-icon')
+      t.equal(response.statusCode, 200)
+      t.equal(response.headers['content-type'], 'image/x-icon')
       // add check on file contents, or at least file size ...
       const fs = require('fs')
       const contents = fs.readFileSync(`${defaultPath}/favicon.ico`)
@@ -68,8 +68,8 @@ test('return a favicon configured in a custom path', (t) => {
       url: `${address}/favicon.ico`
     }, (err, response, body) => {
       t.error(err)
-      t.strictEqual(response.statusCode, 200)
-      t.strictEqual(response.headers['content-type'], 'image/x-icon')
+      t.equal(response.statusCode, 200)
+      t.equal(response.headers['content-type'], 'image/x-icon')
       // add check on file contents, or at least file size ...
       const fs = require('fs')
       const contents = fs.readFileSync(`${pathSample}/favicon.ico`)
@@ -101,8 +101,8 @@ test('return default favicon because that in the custom path is not found', (t) 
       url: `${address}/favicon.ico`
     }, (err, response, body) => {
       t.error(err)
-      t.strictEqual(response.statusCode, 200)
-      t.strictEqual(response.headers['content-type'], 'image/x-icon')
+      t.equal(response.statusCode, 200)
+      t.equal(response.headers['content-type'], 'image/x-icon')
       // add check on file contents, or at least file size ...
       const fs = require('fs')
       const contents = fs.readFileSync(`${defaultPath}/favicon.ico`)

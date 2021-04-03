@@ -1,6 +1,6 @@
 {
   "name": "fastify-favicon",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "description": "Fastify plugin to serve default favicon requests",
   "main": "src/plugin",
   "types": "types/plugin.d.ts",
@@ -28,13 +28,13 @@
   },
   "devDependencies": {
     "@types/node": "^14.14.37",
-    "@typescript-eslint/eslint-plugin": "^4.19.0",
-    "@typescript-eslint/parser": "^4.19.0",
+    "@typescript-eslint/eslint-plugin": "^4.20.0",
+    "@typescript-eslint/parser": "^4.20.0",
     "jsdoc": "^3.6.6",
-    "fastify": "^3.0.0",
+    "fastify": "^3.11.0",
     "simple-get": "^4.0.0",
     "standard": "^16.0.3",
-    "tap": "^14.11.0",
+    "tap": "^15.0.1",
     "tsd": "^0.14.0",
     "typescript": "^4.2.3"
   },
