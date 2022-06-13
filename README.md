@@ -3,9 +3,6 @@
   [![NPM Version](https://img.shields.io/npm/v/fastify-favicon.svg?style=flat)](https://npmjs.org/package/fastify-favicon/)
   [![NPM Downloads](https://img.shields.io/npm/dm/fastify-favicon.svg?style=flat)](https://npmjs.org/package/fastify-favicon/)
   [![Code Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
-  [![Coverage Status](https://coveralls.io/repos/github/smartiniOnGitHub/fastify-favicon/badge.svg?branch=master)](https://coveralls.io/github/smartiniOnGitHub/fastify-favicon/?branch=master)
-  [![dependencies Status](https://david-dm.org/smartiniOnGitHub/fastify-favicon/status.svg)](https://david-dm.org/smartiniOnGitHub/fastify-favicon)
-  [![devDependencies Status](https://david-dm.org/smartiniOnGitHub/fastify-favicon/dev-status.svg)](https://david-dm.org/smartiniOnGitHub/fastify-favicon?type=dev)
 
 Fastify Plugin to serve default favicon.
 
@@ -31,7 +28,7 @@ fastify.listen(3000)
 
 ## Requirements
 
-Fastify ^3.0.0 , Node.js 10.13.x or later.
+Fastify ^3.11.0 , Node.js 10.13.x or later.
 Note that plugin releases 2.x are for Fastify 2.x, 3.x are for Fastify 3.x, etc.
 
 

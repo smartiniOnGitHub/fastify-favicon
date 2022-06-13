@@ -1,5 +1,15 @@
 # Change Log
 
+## [3.2.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/3.2.0) (2022-06-13)
+[Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/3.1.0...3.2.0)
+Summary Changelog:
+- Updated requirements to Fastify '3.11.0' or higher (but still 3.x)
+- Updated all dependencies to latest (for Node.js 10 LTS)
+- Update TypeScript types
+- Update Copyright year
+- Update Tap configuration
+- Generate documentation from sources with JSDoc
+
 ## [3.1.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/3.1.0) (2021-02-10)
 [Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/3.0.0...3.1.0)
 Summary Changelog:
