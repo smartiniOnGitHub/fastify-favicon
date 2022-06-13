@@ -1,5 +1,13 @@
 # Change Log
 
+## [4.0.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/4.0.0) (2022-06-13)
+[Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/3.2.0...4.0.0)
+Summary Changelog:
+- Updated requirements to Fastify '^4.0.0'
+- Updated all dependencies to latest (for Node.js 14 LTS)
+- Update and simplified example and test code
+- Update documentation from sources with JSDoc
+
 ## [3.2.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/3.2.0) (2022-06-13)
 [Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/3.1.0...3.2.0)
 Summary Changelog:
