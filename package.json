@@ -1,6 +1,6 @@
 {
   "name": "fastify-favicon",
-  "version": "3.2.0",
+  "version": "4.0.0",
   "description": "Fastify plugin to serve default favicon requests",
   "main": "src/plugin",
   "types": "types/plugin.d.ts",
@@ -30,11 +30,11 @@
     "@types/node": "^17.0.42",
     "@typescript-eslint/eslint-plugin": "^5.27.1",
     "@typescript-eslint/parser": "^5.27.1",
-    "fastify": "^3.11.0",
+    "fastify": "^4.0.0",
     "jsdoc": "^3.6.10",
     "simple-get": "^4.0.1",
-    "standard": "^16.0.3",
-    "tap": "^15.0.1",
+    "standard": "^17.0.0",
+    "tap": "^16.2.0",
     "tsd": "^0.21.0",
     "typescript": "^4.7.3"
   },
@@ -52,7 +52,7 @@
   },
   "peerDependencies": {},
   "engines": {
-    "node": ">=10.13.0"
+    "node": ">=14.15.0"
   },
   "homepage": "https://github.com/smartiniOnGitHub/fastify-favicon#readme",
   "repository": {

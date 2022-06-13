@@ -20,14 +20,14 @@ const sget = require('simple-get').concat
 const Fastify = require('fastify')
 
 test('default favicon does not return an error, but a good response (200) and some content', (t) => {
-  t.plan(6)
+  // t.plan(6)
   const defaultPath = './src'
   const fastify = Fastify()
-  t.teardown(fastify.close.bind(fastify))
+  t.teardown(() => { fastify.close() })
 
   fastify.register(require('../')) // configure this plugin with its default options
 
-  fastify.listen(0, (err, address) => {
+  fastify.listen({ port: 0 }, (err, address) => {
     t.error(err)
 
     sget({
@@ -46,20 +46,20 @@ test('default favicon does not return an error, but a good response (200) and so
       assert(contents !== null)
       t.ok(contents)
       t.strictSame(contents.length, body.length)
+      t.end()
     })
   })
 })
 
 test('return a favicon configured in a custom path', (t) => {
-  t.plan(6)
   const pathSample = './test'
   const fastify = Fastify()
-  t.teardown(fastify.close.bind(fastify))
+  t.teardown(() => { fastify.close() })
   fastify.register(require('../'), {
     path: pathSample
   })
 
-  fastify.listen(0, (err, address) => {
+  fastify.listen({ port: 0 }, (err, address) => {
     t.error(err)
 
     sget({
@@ -78,21 +78,21 @@ test('return a favicon configured in a custom path', (t) => {
       assert(contents !== null)
       t.ok(contents)
       t.strictSame(contents.length, body.length)
+      t.end()
     })
   })
 })
 
 test('return default favicon because that in the custom path is not found', (t) => {
-  t.plan(6)
   const pathSample = './test/not-existing-img-path' // path that here does not exist, good for this test
   const defaultPath = './src'
   const fastify = Fastify()
-  t.teardown(fastify.close.bind(fastify))
+  t.teardown(() => { fastify.close() })
   fastify.register(require('../'), {
     path: pathSample
   })
 
-  fastify.listen(0, (err, address) => {
+  fastify.listen({ port: 0 }, (err, address) => {
     t.error(err)
 
     sget({
@@ -111,6 +111,7 @@ test('return default favicon because that in the custom path is not found', (t) 
       assert(contents !== null)
       t.ok(contents)
       t.strictSame(contents.length, body.length)
+      t.end()
     })
   })
 })

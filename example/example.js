@@ -37,7 +37,7 @@ fastify.get('/', function (req, reply) {
   reply.type('text/html; charset=utf-8').send(stream)
 })
 
-fastify.listen(3000, '127.0.0.1', (err, address) => {
+fastify.listen({ port: 3000, host: 'localhost' }, (err, address) => {
   if (err) throw err
   console.log(`Server listening on '${address}' ...`)
 })
