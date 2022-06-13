@@ -57,6 +57,6 @@ function ensureIsString (arg, name) {
 }
 
 module.exports = fp(fastifyFavicon, {
-  fastify: '3.x',
+  fastify: '4.x',
   name: 'fastify-favicon'
 })
