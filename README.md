@@ -22,14 +22,14 @@ fastify.register(require('fastify-favicon'))
 // and custom name; both options are optional
 fastify.register(require('fastify-favicon'), { path: './test', name: 'icon.ico' })
 
-fastify.listen(3000)
+fastify.listen({ port: 3000, host: 'localhost' })
 // curl http://127.0.0.1:3000/favicon.ico => returning the image, and no error thrown
 ```
 
 ## Requirements
 
-Fastify ^3.11.0 , Node.js 10.13.x or later.
-Note that plugin releases 2.x are for Fastify 2.x, 3.x are for Fastify 3.x, etc.
+Fastify ^4.0.0 , Node.js 14.15.0 or later.
+Note that plugin releases 3.x are for Fastify 3.x, 4.x are for Fastify 4.x, etc.
 
 
 ## Sources
