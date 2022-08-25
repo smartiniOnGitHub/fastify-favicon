@@ -17,37 +17,41 @@
 
 const fp = require('fastify-plugin')
 const pn = require('path')
-const scriptRelativeFolder = pn.join(__dirname, pn.sep)
 const fs = require('fs')
 
 const iconNameDefault = 'favicon.ico'
 
 function fastifyFavicon (fastify, options, next) {
   const {
-    path = '',
+    path = __dirname,
     name = iconNameDefault
   } = options
 
   ensureIsString(path, 'iconPath')
   ensureIsString(name, 'iconName')
 
-  fastify.get(`/${name}`, defaultFaviconHandler)
   const icon = pn.join(path, name)
 
-  function defaultFaviconHandler (req, reply) {
-    fs.readFile(icon, (err, data) => {
-      let stream
-      if (err && err.code === 'ENOENT') {
-        fastify.log.warn(`Custom favicon '${icon}' not found, serving the default one`)
-        stream = fs.createReadStream(pn.join(scriptRelativeFolder, iconNameDefault))
-      } else {
-        stream = fs.createReadStream(icon)
+  fs.readFile(icon, (err, faviconFile) => {
+    if (err) {
+      if (err.code === 'ENOENT') {
+        next(new Error(`fastify-favicon: ${icon} not found`))
+        return
       }
-      reply.type('image/x-icon').send(stream)
-    })
-  }
 
-  next()
+      next(new Error(`fastify-favicon: Could not load ${icon}`))
+      return
+    }
+
+    fastify.get(`/${name}`, faviconRequestHandler(faviconFile))
+    next()
+  })
+
+  function faviconRequestHandler (file) {
+    return function handler (_fastifyRequest, fastifyReply) {
+      fastifyReply.type('image/x-icon').send(file)
+    }
+  }
 }
 
 function ensureIsString (arg, name) {
