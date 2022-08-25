@@ -1,10 +1,12 @@
 {
   "name": "fastify-favicon",
-  "version": "4.1.0",
+  "version": "4.2.0",
   "description": "Fastify plugin to serve default favicon requests",
   "main": "src/plugin",
   "types": "types/plugin.d.ts",
   "scripts": {
+    "audit:log": "npm audit > ./temp/audit.log",
+    "clean:install": "rm -rf ./package-lock.json ./node_modules/",
     "dependency:log": "npm list > ./temp/dependencies.log",
     "docs:clean": "rm -rf ./out/*",
     "docs:generate": "npx jsdoc -c .jsdoc.json -R README.md",
@@ -24,17 +26,18 @@
     "test": "npm run lint:standard && npm run lint:typescript && npm run test:types && npm run test:unit"
   },
   "dependencies": {
-    "fastify-plugin": "^4.0.0"
+    "fastify-plugin": "^4.2.0"
   },
   "devDependencies": {
-    "@types/node": "^18.0.6",
-    "@typescript-eslint/eslint-plugin": "^5.30.7",
-    "@typescript-eslint/parser": "^5.30.7",
-    "fastify": "^4.0.1",
-    "jsdoc": "^3.6.10",
+    "@types/node": "^18.7.13",
+    "@typescript-eslint/eslint-plugin": "^5.35.1",
+    "@typescript-eslint/parser": "^5.35.1",
+    "fastify": "^4.5.2",
+    "jsdoc": "^3.6.11",
     "standard": "^17.0.0",
     "tap": "^16.3.0",
-    "tsd": "^0.22.0"
+    "tsd": "^0.22.0",
+    "typescript": "^4.7.4"
   },
   "standard": {
     "ignore": [
