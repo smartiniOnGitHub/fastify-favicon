@@ -16,8 +16,8 @@
 'use strict'
 
 const fp = require('fastify-plugin')
-const pn = require('path')
-const fs = require('fs')
+const pn = require('node:path')
+const fs = require('node:fs')
 
 const iconNameDefault = 'favicon.ico'
 
