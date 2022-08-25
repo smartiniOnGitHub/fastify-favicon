@@ -48,9 +48,9 @@ The plugin exposes a GET handler on the URI `/${name}`;
 Fastify default favicon is used by default, but a custom one can be used.
 
 Plugin options:
-- 'path' (default `__dirname`) for the folder containing the icon
-- 'name' (default 'favicon.ico') for favicon file name
-- 'maxAge' (default 86400) for cache duration in seconds for the image
+- path (default `__dirname`) for the folder containing the icon
+- name (default 'favicon.ico') for favicon file name
+- maxAge (default 86400) for cache duration in seconds for the image
 
 
 ## Contributing

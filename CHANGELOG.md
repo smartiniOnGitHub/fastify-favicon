@@ -7,7 +7,8 @@ Summary Changelog:
 - Updated all dependencies to latest
 - Improved performance (a lot) by caching the favicon, see related plugin option
 - Simplified test code
-- Ensure all is good
+- Ensure all works with latest Node.js 14 LTS and later LTS releases
+- Improve JSDoc comments, generated documentation is much better now
 
 ## [4.1.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/4.1.0) (2022-07-19)
 [Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/4.0.0...4.1.0)

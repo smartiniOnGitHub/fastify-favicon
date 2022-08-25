@@ -15,13 +15,33 @@
  */
 'use strict'
 
+/**
+ * Plugin:
+ * this module exports the plugin as a function.
+ * @module plugin
+ */
+
 const fp = require('fastify-plugin')
 const pn = require('node:path')
 const fs = require('node:fs')
 
 const iconNameDefault = 'favicon.ico'
 
-function fastifyFavicon (fastify, options, next) {
+/**
+ * Plugin implementation.
+ *
+ * @param {!object} fastify Fastify instance
+ * @param {!object} options plugin configuration options
+ * <ul>
+ *     <li>path (string, default `__dirname`) for the folder containing the icon,</li>
+ *     <li>name (string, default 'favicon.ico') for favicon file name,</li>
+ *     <li>maxAge (number, default 86400) for cache duration in seconds for the image,</li>
+ * </ul>
+ * @param {!function} done callback, to call as last step
+ *
+ * @namespace
+ */
+ function fastifyFavicon (fastify, options, done) {
   const {
     path = __dirname,
     name = iconNameDefault,
@@ -37,19 +57,27 @@ function fastifyFavicon (fastify, options, next) {
   fs.readFile(icon, (err, faviconFile) => {
     if (err) {
       if (err.code === 'ENOENT') {
-        next(new Error(`fastify-favicon: ${icon} not found`))
+        done(new Error(`fastify-favicon: ${icon} not found`))
         return
       }
 
-      next(new Error(`fastify-favicon: Could not load ${icon}`))
+      done(new Error(`fastify-favicon: Could not load ${icon}`))
       return
     }
 
     fastify.get(`/${name}`, faviconRequestHandler(faviconFile))
-    next()
+    done()
   })
 
-  function faviconRequestHandler (file) {
+  /**
+   * Factory for the request handler for the favicon.
+   *
+   * @param {!object} file the icon file to send in the response
+   * @return {function} the handler function, preconfigured with plugin settings and the file to send
+   *
+   * @inner
+   */
+   function faviconRequestHandler (file) {
     const cacheHeader = `max-age=${maxAge}`
     return function handler (_fastifyRequest, fastifyReply) {
       fastifyReply
@@ -59,6 +87,8 @@ function fastifyFavicon (fastify, options, next) {
     }
   }
 }
+
+// utility functions
 
 function ensureIsString (arg, name) {
   if (arg !== null && typeof arg !== 'string') {

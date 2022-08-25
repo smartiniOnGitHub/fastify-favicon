@@ -8,7 +8,7 @@
     "audit:log": "npm audit > ./temp/audit.log",
     "clean:install": "rm -rf ./package-lock.json ./node_modules/",
     "dependency:log": "npm list > ./temp/dependencies.log",
-    "docs:clean": "rm -rf ./out/*",
+    "docs:clean": "rm -rf ./docs/*",
     "docs:generate": "npx jsdoc -c .jsdoc.json -R README.md",
     "docs": "npm run docs:clean && npm run docs:generate",
     "example": "node example/example",
