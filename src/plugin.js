@@ -24,11 +24,13 @@ const iconNameDefault = 'favicon.ico'
 function fastifyFavicon (fastify, options, next) {
   const {
     path = __dirname,
-    name = iconNameDefault
+    name = iconNameDefault,
+    maxAge = 86400
   } = options
 
   ensureIsString(path, 'iconPath')
   ensureIsString(name, 'iconName')
+  ensureIsInteger(maxAge, 'maxAge')
 
   const icon = pn.join(path, name)
 
@@ -48,8 +50,12 @@ function fastifyFavicon (fastify, options, next) {
   })
 
   function faviconRequestHandler (file) {
+    const cacheHeader = `max-age=${maxAge}`
     return function handler (_fastifyRequest, fastifyReply) {
-      fastifyReply.type('image/x-icon').send(file)
+      fastifyReply
+        .header('cache-control', cacheHeader)
+        .type('image/x-icon')
+        .send(file)
     }
   }
 }
@@ -57,6 +63,11 @@ function fastifyFavicon (fastify, options, next) {
 function ensureIsString (arg, name) {
   if (arg !== null && typeof arg !== 'string') {
     throw new TypeError(`The argument '${name}' must be a string, instead got a '${typeof arg}'`)
+  }
+}
+function ensureIsInteger (arg, name) {
+  if (arg !== null && typeof arg !== 'string' && Number.isFinite(arg) === false && Number.isInteger(arg) === false) {
+    throw new TypeError(`The argument '${name}' must be an integer`)
   }
 }
 
