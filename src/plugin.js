@@ -41,7 +41,7 @@ const iconNameDefault = 'favicon.ico'
  *
  * @namespace
  */
- function fastifyFavicon (fastify, options, done) {
+function fastifyFavicon (fastify, options, done) {
   const {
     path = __dirname,
     name = iconNameDefault,
@@ -77,7 +77,7 @@ const iconNameDefault = 'favicon.ico'
    *
    * @inner
    */
-   function faviconRequestHandler (file) {
+  function faviconRequestHandler (file) {
     const cacheHeader = `max-age=${maxAge}`
     return function handler (_fastifyRequest, fastifyReply) {
       fastifyReply
