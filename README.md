@@ -7,7 +7,7 @@
 
 Fastify Plugin to serve the favicon.
 
-With this plugin, Fastify will have a route configured for `/favicon.ico` requests.
+With this plugin, Fastify will have a route configured for favicon (usually `/favicon.ico`) requests.
 
 
 ## Usage
@@ -20,8 +20,8 @@ const fastify = require('fastify')()
 fastify.register(require('fastify-favicon'))
 // or
 // example with custom path (usually relative to project root, but could be absolute),
-// and custom name; both options are optional
-fastify.register(require('fastify-favicon'), { path: './test', name: 'icon.ico' })
+// and custom name; all options are optional
+fastify.register(require('fastify-favicon'), { path: './test', name: 'icon.ico', maxAge: 3600 })
 
 fastify.listen({ port: 3000, host: 'localhost' })
 // curl http://127.0.0.1:3000/favicon.ico => returning the image, and no error thrown
@@ -44,7 +44,13 @@ Documentation generated from source code (library API):
 
 ## Note
 
-Nothing.
+The plugin exposes a GET handler on the URI `/${name}`; 
+Fastify default favicon is used by default, but a custom one can be used.
+
+Plugin options:
+- 'path' (default `__dirname`) for the folder containing the icon
+- 'name' (default 'favicon.ico') for favicon file name
+- 'maxAge' (default 86400) for cache duration in seconds for the image
 
 
 ## Contributing
