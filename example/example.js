@@ -17,7 +17,7 @@
 
 const fastify = require('fastify')()
 
-fastify.register(require('../'), {
+fastify.register(require('..'), {
   // some examples of custom path (optional)
   // path: 'test' // relative to project root // ok
   // path: './test' // relative to project root // ok

@@ -9,7 +9,7 @@ const options: FastifyFaviconOptions = {
 }
 app.register(fastifyFavicon, options)
 
-app.listen(3000, (err, address) => {
+app.listen({ port: 3000 }, (err, address) => {
   if (err) throw err
   console.log(`Server listening on '${address}' ...`)
 })
@@ -17,5 +17,6 @@ app.listen(3000, (err, address) => {
 expectAssignable<FastifyFaviconOptions>({})
 expectAssignable<FastifyFaviconOptions>({
   path: 'blah/blah/blah',
-  name: 'icon.ico'
+  name: 'icon.ico',
+  maxAge: 1
 })

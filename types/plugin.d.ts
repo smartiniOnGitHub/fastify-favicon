@@ -3,8 +3,9 @@
 import { FastifyPluginCallback } from 'fastify'
 
 export interface FastifyFaviconOptions {
-  path?: string
-  name?: string
+  path?: string;
+  name?: string;
+  maxAge?: number;
 }
 
 declare const fastifyFavicon: FastifyPluginCallback<FastifyFaviconOptions>

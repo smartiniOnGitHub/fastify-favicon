@@ -17,42 +17,57 @@
 
 const fp = require('fastify-plugin')
 const pn = require('path')
-const scriptRelativeFolder = pn.join(__dirname, pn.sep)
 const fs = require('fs')
 
 const iconNameDefault = 'favicon.ico'
 
 function fastifyFavicon (fastify, options, next) {
   const {
-    path = '',
-    name = iconNameDefault
+    path = __dirname,
+    name = iconNameDefault,
+    maxAge = 86400
   } = options
 
   ensureIsString(path, 'iconPath')
   ensureIsString(name, 'iconName')
+  ensureIsInteger(maxAge, 'maxAge')
 
-  fastify.get(`/${name}`, defaultFaviconHandler)
   const icon = pn.join(path, name)
 
-  function defaultFaviconHandler (req, reply) {
-    fs.readFile(icon, (err, data) => {
-      let stream
-      if (err && err.code === 'ENOENT') {
-        fastify.log.warn(`Custom favicon '${icon}' not found, serving the default one`)
-        stream = fs.createReadStream(pn.join(scriptRelativeFolder, iconNameDefault))
-      } else {
-        stream = fs.createReadStream(icon)
+  fs.readFile(icon, (err, faviconFile) => {
+    if (err) {
+      if (err.code === 'ENOENT') {
+        next(new Error(`fastify-favicon: ${icon} not found`))
+        return
       }
-      reply.type('image/x-icon').send(stream)
-    })
-  }
 
-  next()
+      next(new Error(`fastify-favicon: Could not load ${icon}`))
+      return
+    }
+
+    fastify.get(`/${name}`, faviconRequestHandler(faviconFile))
+    next()
+  })
+
+  function faviconRequestHandler (file) {
+    const cacheHeader = `max-age=${maxAge}`
+    return function handler (_fastifyRequest, fastifyReply) {
+      fastifyReply
+        .header('cache-control', cacheHeader)
+        .type('image/x-icon')
+        .send(file)
+    }
+  }
 }
 
 function ensureIsString (arg, name) {
   if (arg !== null && typeof arg !== 'string') {
     throw new TypeError(`The argument '${name}' must be a string, instead got a '${typeof arg}'`)
+  }
+}
+function ensureIsInteger (arg, name) {
+  if (arg !== null && typeof arg !== 'string' && Number.isFinite(arg) === false && Number.isInteger(arg) === false) {
+    throw new TypeError(`The argument '${name}' must be an integer`)
   }
 }
 
