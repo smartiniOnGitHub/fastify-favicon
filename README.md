@@ -3,8 +3,9 @@
   [![NPM Version](https://img.shields.io/npm/v/fastify-favicon.svg?style=flat)](https://npmjs.org/package/fastify-favicon/)
   [![NPM Downloads](https://img.shields.io/npm/dm/fastify-favicon.svg?style=flat)](https://npmjs.org/package/fastify-favicon/)
   [![Code Style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg?style=flat)](http://standardjs.com/)
+  [![license - APACHE-2.0](https://img.shields.io/npm/l/fastify-favicon.svg)](http://opensource.org/licenses/APACHE-2.0)
 
-Fastify Plugin to serve default favicon.
+Fastify Plugin to serve the favicon.
 
 With this plugin, Fastify will have a route configured for `/favicon.ico` requests.
 
@@ -28,7 +29,7 @@ fastify.listen({ port: 3000, host: 'localhost' })
 
 ## Requirements
 
-Fastify ^4.0.1 , Node.js 14.15.0 or later.
+Fastify ^4.5.2 , Node.js 14.15.0 or later.
 Note that plugin releases 3.x are for Fastify 3.x, 4.x are for Fastify 4.x, etc.
 
 
