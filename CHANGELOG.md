@@ -5,6 +5,7 @@
 Summary Changelog:
 - Updated requirements to Fastify '^4.12.0'; 
   updated all other dependencies to latest
+- Compatibility with TypeScript 4.9 and NodeNext / ESNext
 
 ## [4.2.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/4.2.0) (2022-08-25)
 [Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/4.1.0...4.2.0)

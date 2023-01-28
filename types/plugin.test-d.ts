@@ -1,5 +1,5 @@
 import fastify from 'fastify'
-import fastifyFavicon, { FastifyFaviconOptions } from './plugin'
+import fastifyFavicon, { FastifyFaviconOptions } from '..'
 import { expectAssignable } from 'tsd'
 
 const app = fastify()
