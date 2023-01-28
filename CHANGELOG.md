@@ -1,5 +1,11 @@
 # Change Log
 
+## [4.3.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/4.3.0) (unreleased)
+[Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/4.2.0...4.3.0)
+Summary Changelog:
+- Updated requirements to Fastify '^4.12.0'; 
+  updated all other dependencies to latest
+
 ## [4.2.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/4.2.0) (2022-08-25)
 [Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/4.1.0...4.2.0)
 Summary Changelog:

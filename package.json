@@ -1,6 +1,6 @@
 {
   "name": "fastify-favicon",
-  "version": "4.2.0",
+  "version": "4.3.0",
   "description": "Fastify plugin to serve default favicon requests",
   "main": "src/plugin",
   "types": "types/plugin.d.ts",
@@ -14,7 +14,9 @@
     "example": "node example/example",
     "lint:fix": "standard --fix",
     "lint:standard": "standard --verbose",
-    "lint:typescript": "eslint -c types/.eslintrc.json types/*.d.ts types/*.test-d.ts",
+    "lint:typescript": "standard --parser @typescript-eslint/parser --plugin @typescript-eslint/eslint-plugin test/*.ts",
+    "lint:typescript:eslint": "eslint -c types/.eslintrc.json types/*.d.ts types/*.test-d.ts",
+    "lint:typescript:eslint:fix": "eslint -c types/.eslintrc.json types/*.d.ts types/*.test-d.ts --fix",
     "lint": "npm run lint:standard && npm run lint:typescript",
     "test:clean": "rm -rf .nyc_output/* ./coverage/*",
     "test:coverage:all": "npm run test:unit --  --cov",
@@ -26,18 +28,18 @@
     "test": "npm run lint:standard && npm run lint:typescript && npm run test:types && npm run test:unit"
   },
   "dependencies": {
-    "fastify-plugin": "^4.2.0"
+    "fastify-plugin": "^4.5.0"
   },
   "devDependencies": {
-    "@types/node": "^18.7.13",
-    "@typescript-eslint/eslint-plugin": "^5.35.1",
-    "@typescript-eslint/parser": "^5.35.1",
-    "fastify": "^4.5.2",
-    "jsdoc": "^3.6.11",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "^5.49.0",
+    "@typescript-eslint/parser": "^5.49.0",
+    "fastify": "^4.12.0",
+    "jsdoc": "^4.0.0",
     "standard": "^17.0.0",
-    "tap": "^16.3.0",
-    "tsd": "^0.22.0",
-    "typescript": "^4.7.4"
+    "tap": "^16.3.4",
+    "tsd": "^0.25.0",
+    "typescript": "^4.9.4"
   },
   "standard": {
     "ignore": [
