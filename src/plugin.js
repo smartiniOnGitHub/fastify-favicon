@@ -102,6 +102,6 @@ function ensureIsInteger (arg, name) {
 }
 
 module.exports = fp(fastifyFavicon, {
-  fastify: '4.x',
+  fastify: '5.x',
   name: 'fastify-favicon'
 })
