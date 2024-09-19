@@ -18,14 +18,13 @@
     "lint:typescript:eslint": "eslint -c types/.eslintrc.json types/*.d.ts types/*.test-d.ts",
     "lint:typescript:eslint:fix": "eslint -c types/.eslintrc.json types/*.d.ts types/*.test-d.ts --fix",
     "lint": "npm run lint:standard && npm run lint:typescript",
-    "test:clean": "rm -rf .nyc_output/* ./coverage/*",
+    "test:clean": "rm -rf .nyc_output/* .tap/* ./coverage/*",
     "test:coverage:all": "npm run test:unit --  --coverage-report=text",
     "test:coverage": "npm run test:unit -- --coverage-report=html",
-    "test:config:show": "tap dump-config --allow-incomplete-coverage test/*.test.js",
     "test:types": "tsd",
-    "test:unit:debug": "tap -T --node-arg=--inspect-brk test/*.test.js",
-    "test:unit:dev": "tap --watch --coverage-report=none test/*.test.js",
-    "test:unit": "tap --allow-incomplete-coverage test/*.test.js",
+    "test:unit:debug": "tap -T --node-arg=--inspect-brk",
+    "test:unit:dev": "tap --watch --coverage-report=none",
+    "test:unit": "tap --allow-incomplete-coverage",
     "test": "npm run lint:standard && npm run lint:typescript && npm run test:types && npm run test:unit"
   },
   "dependencies": {
