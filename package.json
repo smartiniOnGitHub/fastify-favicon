@@ -19,27 +19,28 @@
     "lint:typescript:eslint:fix": "eslint -c types/.eslintrc.json types/*.d.ts types/*.test-d.ts --fix",
     "lint": "npm run lint:standard && npm run lint:typescript",
     "test:clean": "rm -rf .nyc_output/* ./coverage/*",
-    "test:coverage:all": "npm run test:unit --  --cov",
-    "test:coverage": "npm run test:unit -- --cov --coverage-report=html",
+    "test:coverage:all": "npm run test:unit --  --coverage-report=text",
+    "test:coverage": "npm run test:unit -- --coverage-report=html",
+    "test:config:show": "tap dump-config --allow-incomplete-coverage test/*.test.js",
     "test:types": "tsd",
     "test:unit:debug": "tap -T --node-arg=--inspect-brk test/*.test.js",
-    "test:unit:dev": "tap --watch --cov test/*.test.js",
-    "test:unit": "tap test/*.test.js",
+    "test:unit:dev": "tap --watch --coverage-report=none test/*.test.js",
+    "test:unit": "tap --allow-incomplete-coverage test/*.test.js",
     "test": "npm run lint:standard && npm run lint:typescript && npm run test:types && npm run test:unit"
   },
   "dependencies": {
     "fastify-plugin": "^5.0.0"
   },
   "devDependencies": {
-    "@types/node": "^18.13.0",
-    "@typescript-eslint/eslint-plugin": "^5.51.0",
-    "@typescript-eslint/parser": "^5.51.0",
+    "@types/node": "^22.5.5",
+    "@typescript-eslint/eslint-plugin": "^8.6.0",
+    "@typescript-eslint/parser": "^8.6.0",
     "fastify": "^5.0.0",
-    "jsdoc": "^4.0.0",
-    "standard": "^17.0.0",
-    "tap": "^16.3.4",
-    "tsd": "^0.25.0",
-    "typescript": "^4.9.5"
+    "jsdoc": "^4.0.3",
+    "standard": "^17.1.2",
+    "tap": "^21.0.1",
+    "tsd": "^0.31.2",
+    "typescript": "^5.6.2"
   },
   "standard": {
     "ignore": [
@@ -55,7 +56,7 @@
   },
   "peerDependencies": {},
   "engines": {
-    "node": ">=20.0.0"
+    "node": ">=20.9.0"
   },
   "homepage": "https://github.com/smartiniOnGitHub/fastify-favicon#readme",
   "repository": {
