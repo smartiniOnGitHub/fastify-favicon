@@ -29,7 +29,7 @@ fastify.listen({ port: 3000, host: 'localhost' })
 
 ## Requirements
 
-Fastify ^4.12.0 , Node.js 14.15.0 or later.
+Fastify ^5.0.0 , Node.js 20.0.0 or later.
 Note that plugin releases 3.x are for Fastify 3.x, 4.x are for Fastify 4.x, etc.
 
 
@@ -44,7 +44,7 @@ Documentation generated from source code (library API):
 
 ## Note
 
-The plugin exposes a GET handler on the URI `/${name}`; 
+The plugin exposes a GET handler on the URI `/${name}`;
 Fastify default favicon is used by default, but a custom one can be used.
 
 Plugin options:
