@@ -29,7 +29,7 @@ fastify.listen({ port: 3000, host: 'localhost' })
 
 ## Requirements
 
-Fastify ^5.0.0 , Node.js 20.9.0 or later.
+Fastify ^5.0.0 , Node.js 20 LTS (20.9.0) or later.
 Note that plugin releases 4.x are for Fastify 4.x, 5.x for Fastify 5.x, etc.
 
 

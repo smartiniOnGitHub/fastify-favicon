@@ -1,6 +1,6 @@
 # Change Log
 
-## [5.0.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/5.0.0) (unreleased)
+## [5.0.0](https://github.com/smartiniOnGitHub/fastify-favicon/releases/tag/5.0.0) (2024-09-21)
 [Full Changelog](https://github.com/smartiniOnGitHub/fastify-favicon/compare/4.3.0...5.0.0)
 Summary Changelog:
 - Updated requirements to Fastify '^5.0.0'
